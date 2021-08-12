@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #daf4f6;
+    transition: 1s all ease-out;
+    font-family: Raleway;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+}
+
+/* Using flex with the column direction to
+align items in a vertical direction */
+.player {
+    /*background-color: rgb(31,33,38);*/
+    border: 3px solid #e56b43;
+    height: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background: linear-gradient(145deg, #1b1c20, #202125);
+    box-shadow:  9px 9px 21px rgba(25, 25, 29, 0.2),
+    -9px -9px 21px rgba(35, 37, 41, 0.29);
+}
+.musicBox{
+    height: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    width: 100%;
+    display: grid;
+    align-content: space-evenly;
+    padding: 0 30px;
+    justify-items: center;
+}
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /*margin-top: 15px;*/
+}
+
+.track-art {
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.11);
+    /*margin: 10px auto 20px auto;*/
+    height: 200px;
+    width: 200px;
+    background-image: url("musicbg.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    margin-bottom: 30px;
+    border: 3px solid #e56b43;
+}
+
+/* Changing the font sizes to suitable ones */
+.now-playing {
+    font-size: 1rem;
+}
+
+.track-name {
+    font-size: 2rem;
+    color: whitesmoke;
+    padding-top: 30px;
+}
+
+.track-artist {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: rgba(245, 245, 245, 0.58);
+
+}
+
+/* Using flex with the row direction to
+align items in a horizontal direction */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+    /*padding: 25px;*/
+    opacity: 0.8;
+    cursor: pointer;
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+    border-radius: 100%;
+    /*background-color: grey;*/
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border-radius: 175px;*/
+    background: linear-gradient(145deg, #222328, #1d1e21);
+    box-shadow:  5px 5px 15px #0d0d0f,
+    -5px -5px 15px #33353b;
+    color: whitesmoke;
+}
+.playpause-track{
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ce603c, #f57248);
+    box-shadow:  5px 5px 15px #0d0d0f,
+    -5px -5px 15px #33353b;
+}
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 1.0;
+}
+
+/* Define the slider width so that it scales properly */
+.slider_container {
+    width: 100%;
+    display: grid;
+    justify-content: stretch;
+    align-items: center;
+
+}
+.slider_container_volume{
+    position: fixed;
+    right: 20px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    /*-webkit-appearance: none;*/
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    writing-mode: bt-lr; /* IE */
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.seek_slider {
+    width: 100%;
+    height: 3px !important;
+    background-color: #e56b43;
+}
+
+.volume_slider {
+    width: 100%;
+    /*height: 400px;*/
+    -webkit-appearance: slider-vertical !important;
+
+}
+.duration-time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.current-time,
+.total-duration {
+    padding: 16px 0;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.6);
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 10px;
+}
+
+/* Change the mouse cursor to a pointer
+when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+    cursor: pointer;
+}
+
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb{
+    width: 25px !important;
+    height: 25px !important;
+}
